@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { forwardRef, HTMLAttributes } from 'react';
-
+import Draggable from 'react-draggable';
 import { StyledVideoTile } from './Styled';
 import { BaseProps } from '../Base';
 
@@ -22,6 +22,7 @@ export const VideoTile = forwardRef(
     const { tag, className, nameplate, ...rest } = props;
 
     return (
+      <Draggable>
       <StyledVideoTile
         as={tag}
         className={className || ''}
@@ -35,6 +36,7 @@ export const VideoTile = forwardRef(
           </header>
         )}
       </StyledVideoTile>
+      </Draggable>
     );
   }
 );
